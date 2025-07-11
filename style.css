@@ -1,0 +1,187 @@
+/* Algemene reset en basisstijl */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #003448; /* diepblauw uit logo */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Hero sectie met video */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.video-bg iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 52, 72, 0.8); /* donkerblauwe tint overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+/* Logo of naam */
+.logo-text {
+  font-size: 3rem;
+  color: rgb(255, 150, 26); /* oranje */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA knop */
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.6rem;
+  background: rgb(255, 150, 26);
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #ffa733;
+}
+
+/* Navigatie */
+.main-nav {
+  background: #002d3d;
+  padding: 0.8rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: rgb(255, 150, 26);
+}
+
+/* Secties */
+.section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: rgb(255, 150, 26);
+}
+
+.concerts li {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #002d3d;
+  color: #999;
+}
+
+/* Social links */
+.socials a {
+  margin-right: 1rem;
+  color: rgb(255, 150, 26);
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .logo-text {
+    font-size: 2.2rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  iframe {
+    height: 300px !important;
+  }
+}
+.logo-text:hover {
+  animation: glitch 0.4s;
+}
+@keyframes glitch {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
